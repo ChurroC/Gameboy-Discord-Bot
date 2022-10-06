@@ -1,0 +1,32 @@
+{
+  "name": "weather_bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon -r dotenv/config index.js",
+    "deploy": "node deploy-commands.js",
+    "deployDev": "nodemon --watch slashCommands -r dotenv/config deploy-commands.js",
+    "fullStart": "npm run deploy && npm run start",
+    "fullDevStart": "concurrently \"npm run deployDev\" \"npm run dev\" "
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/builders": "^0.15.0",
+    "@discordjs/rest": "^0.5.0",
+    "axios": "^0.27.2",
+    "canvas": "^2.9.3",
+    "discord-api-types": "^0.33.4",
+    "discord.js": "^13.8.0",
+    "mongoose": "^6.3.6",
+    "serverboy": "^0.0.7"
+  },
+  "devDependencies": {
+    "concurrently": "^7.3.0",
+    "dotenv": "^16.0.1",
+    "nodemon": "^2.0.16"
+  }
+}
